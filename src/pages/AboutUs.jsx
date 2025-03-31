@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import heroImage from "../assets/gradhat22.jpg";
-import servise from "../assets/servise.png";
+import servise from "../assets/servise.jpg";
 import personImage from "../assets/Person.jpg";
 import personImage2 from "../assets/person2.jpg";
 import missionImage from "../assets/missionn.png";
