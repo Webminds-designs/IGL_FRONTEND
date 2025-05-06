@@ -23,6 +23,7 @@ const IndividualCountry = () => {
             src={country.image}
             alt="Hero"
             className="absolute inset-0 w-full h-full object-cover opacity-70"
+            loading="lazy"
           />
           <div className="absolute inset-0 flex items-end justify-start pb-6 md:pb-12 px-4 md:px-8 lg:px-16 xl:px-24">
             <h1 className="text-2xl sm:text-3xl md:text-2xl lg:text-[64px] xl:text-[64px] font-medium text-white text-left leading-tight md:leading-normal">
@@ -44,11 +45,15 @@ const IndividualCountry = () => {
               Discover Universities Partnered With IGL In {country.name}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
-
               {country.featuredUniversities.map((university, index) => (
-                <UniversityCard key={index} image={university.image} name={university.name} id={university.id} />
+                <UniversityCard
+                  key={index}
+                  image={university.image}
+                  name={university.name}
+                  id={university.id}
+                  lazyLoad={true} // Pass lazyLoad prop to UniversityCard
+                />
               ))}
-
             </div>
           </div>
         </section>
@@ -88,6 +93,7 @@ const IndividualCountry = () => {
                   image={university.image}
                   name={university.name}
                   id={university.id}
+                  lazyLoad={true} // Pass lazyLoad prop to UniversityCard
                 />
               ))}
             </div>
