@@ -4,11 +4,11 @@ import Navbar from "./Navbar";
 
 // Import images
 const images = [
-  { src: () => import("../assets/hero.png"), location: "Singapore" },
-  { src: () => import("../assets/hero2.png"), location: "USA" },
-  { src: () => import("../assets/hero3.png"), location: "Canada" },
-  { src: () => import("../assets/hero4.png"), location: "UK" },
-  { src: () => import("../assets/hero5.png"), location: "Australia" },
+  { src: () => import("../assets/hero.jpg"), location: "Singapore" },
+  { src: () => import("../assets/hero2.jpg"), location: "USA" },
+  { src: () => import("../assets/hero3.jpg"), location: "Canada" },
+  { src: () => import("../assets/hero4.jpg"), location: "UK" },
+  { src: () => import("../assets/hero5.jpg"), location: "Australia" },
 ];
 
 const HeroSection = () => {
