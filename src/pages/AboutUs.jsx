@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import heroImage from "../assets/gradhat22.png";
 import servise from "../assets/servise.png";
-import personImage2 from "../assets/person.jpg";
+import personImage2 from "../assets/pperson.jpg";
 import personImage from "../assets/person2.jpg";
 import missionImage from "../assets/missionn.png";
 import "slick-carousel/slick/slick.css";
