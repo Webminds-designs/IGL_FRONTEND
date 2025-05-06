@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import UniversityCard from "../components/UniversityCard";
-import countries from "../Data/countries"; // Adjust the path as necessary
+import countries from "../Data/countries";
 
 const IndividualCountry = () => {
   const { countryCode } = useParams();
@@ -18,11 +18,11 @@ const IndividualCountry = () => {
       <Navbar />
       <div className="overflow-x-hidden">
         {/* Hero Section */}
-        <div className="relative w-full h-[50vh] min-h-[300px] md:h-[60vh] lg:h-[70vh]">
+        <div className="relative w-full h-[50vh] min-h-[300px] md:h-[60vh] lg:h-[100vh] bg-black">
           <img
-            src={country.heroImage}
+            src={country.image}
             alt="Hero"
-            className="w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover opacity-70"
           />
           <div className="absolute inset-0 flex items-end justify-start pb-6 md:pb-12 px-4 md:px-8 lg:px-16 xl:px-24">
             <h1 className="text-2xl sm:text-3xl md:text-2xl lg:text-[64px] xl:text-[64px] font-medium text-white text-left leading-tight md:leading-normal">
@@ -44,9 +44,11 @@ const IndividualCountry = () => {
               Discover Universities Partnered With IGL In {country.name}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+
               {country.featuredUniversities.map((university, index) => (
-                <UniversityCard key={index} image={university.image} name={university.name} />
+                <UniversityCard key={index} image={university.image} name={university.name} id={university.id} />
               ))}
+
             </div>
           </div>
         </section>
@@ -81,7 +83,12 @@ const IndividualCountry = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
               {country.popularUniversities.map((university, index) => (
-                <UniversityCard key={index} image={university.image} name={university.name} />
+                <UniversityCard
+                  key={index}
+                  image={university.image}
+                  name={university.name}
+                  id={university.id}
+                />
               ))}
             </div>
 
