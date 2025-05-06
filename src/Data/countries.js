@@ -1,33 +1,71 @@
+
+// Importing University Images
+import waxsenImage from '../assets/waxsen.jpg';
+import spectrumImage from '../assets/spectrum.jpg';
+import australasiaImage from '../assets/australasia.jpg';
+import escClermontImage from '../assets/esc-clermont.jpg';
+import neomaImage from '../assets/neoma.jpg';
+import wittenborgImage from '../assets/wittenborg.jpg';
+import amsterdamImage from '../assets/amsterdam.jpg';
+import berlinImage from '../assets/berlin.jpg';
+import hamburgImage from '../assets/hamburg.jpg';
+import johnPaulImage from '../assets/john-paul.jpg';
+import davisImage from '../assets/davis.jpg';
+import eduglobalImage from '../assets/eduglobal.jpg';
+import miamiImage from '../assets/miami.jpg';
+import trinityImage from '../assets/trinity.jpg';
+import torontoYorkImage from '../assets/toronto-york.jpg';
+import brusselImage from '../assets/brussel.jpg';
+import manipalImage from '../assets/manipal.jpg';
+import bhmImage from '../assets/bhm.jpg';
+import laXeniaImage from '../assets/la-xenia.jpg';
+import ibaImage from '../assets/iba.jpg';
+
+import heroImage1 from '../assets/herousa.jpg';
+import heroImage2 from '../assets/herocanda.jpg';
+import heroImage3 from '../assets/herogermany.jpg';
+import heroImage4 from '../assets/herofrance.jpg';
+import heroImage5 from '../assets/heroswiss.jpg';
+import heroImage6 from '../assets/herosingapore.jpg';
+import heroImage7 from '../assets/heromala.jpg';
+import heroImage8 from '../assets/heronetherland.jpg';
+import heroImage9 from '../assets/heropoland.jpg';
+import heroImage10 from '../assets/herouae.jpg';
+import heroImage11 from '../assets/heroindia.jpg';
+import heroImage12 from '../assets/herobelgium.jpg';
+
+
 const countries = {
     usa: {
         name: "United States",
-        heroImage: "/assets/GoldenGate.png",
+        image: heroImage1,
         heroText: "Study in USA – Your Pathway to Global Education Starts Here",
         featuredUniversities: [
-            { image: "/assets/MiamiUni.png", name: "Miami Regional University" },
-            { image: "/assets/DavisUni.png", name: "Davis University" },
-            { image: "/assets/EduGCol.png", name: "EduGlobal College" },
+            { image: davisImage, name: "Davis University", id: "davis-university" },
+            { image: eduglobalImage, name: "EduGlobal College", id: "eduglobal-college" },
+            { image: miamiImage, name: "Miami Regional University", id: "miami-regional-university" },
+
         ],
         whyStudyHere: `The USA offers a world-class education system, globally recognized 
         degrees, and diverse career opportunities. With cutting-edge research, strong 
         industry connections, and a focus on innovation, studying in the USA provides 
         real-world experience and a transformative journey.`,
         popularUniversities: [
-            { image: "/assets/WoxenUni.png", name: "Woxsen University" },
-            { image: "/assets/NEOMA.png", name: "NEOMA Business School" },
-            { image: "/assets/AmsterCam.png", name: "Amsterdam Campus" },
+            { image: hamburgImage, name: "University of Hamburg", id: "university-of-hamburg" },
+            { image: waxsenImage, name: "Waxsen University", id: "waxsen-university" },
+            { image: laXeniaImage, name: "La Xenia International Institute", id: "la-xenia-international-institute" },
         ],
     },
 
     canada: {
         name: "Canada",
-        heroImage: "/assets/CanadaBanner.png",
+        image: heroImage2,
         heroText: "Study in Canada – A Land of Opportunities and Excellence",
 
         featuredUniversities: [
-            { image: "/assets/TorontoUni.png", name: "University of Toronto" },
-            { image: "/assets/McGillUni.png", name: "McGill University" },
-            { image: "/assets/UBC.png", name: "University of British Columbia" },
+            { image: trinityImage, name: "Trinity Western University", id: "trinity-western-university" },
+            { image: torontoYorkImage, name: "Toronto York University", id: "toronto-york-university" },
+
         ],
 
         whyStudyHere: `Canada is known for its high-quality education, diverse culture, 
@@ -36,21 +74,22 @@ const countries = {
         seeking academic excellence and career growth.`,
 
         popularUniversities: [
-            { image: "/assets/Waterloo.png", name: "University of Waterloo" },
-            { image: "/assets/Alberta.png", name: "University of Alberta" },
-            { image: "/assets/Western.png", name: "Western University" },
+            { image: wittenborgImage, name: "Wittenborg University", id: "wittenborg-university" },
+            { image: amsterdamImage, name: "Amsterdam Campus", id: "amsterdam-campus" },
+            { image: berlinImage, name: "Berlin International University", id: "berlin-international-university" },
+            { image: hamburgImage, name: "University of Hamburg", id: "university-of-hamburg" },
         ],
     },
 
     germany: {
         name: "Germany",
-        heroImage: "/assets/GermanyBanner.png",
+        image: heroImage3,
         heroText: "Study in Germany – Innovate, Research, and Excel",
 
         featuredUniversities: [
-            { image: "/assets/Heidelberg.png", name: "Heidelberg University" },
-            { image: "/assets/LMU.png", name: "Ludwig Maximilian University" },
-            { image: "/assets/TechnicalMunich.png", name: "Technical University of Munich" },
+            { image: berlinImage, name: "Berlin International University", id: "berlin-international-university" },
+            { image: hamburgImage, name: "University of Hamburg", id: "university-of-hamburg" },
+
         ],
 
         whyStudyHere: `Germany is a hub for innovation, research, and technology. 
@@ -59,21 +98,21 @@ const countries = {
         market make it an excellent destination for higher studies.`,
 
         popularUniversities: [
-            { image: "/assets/Freiburg.png", name: "University of Freiburg" },
-            { image: "/assets/Stuttgart.png", name: "University of Stuttgart" },
-            { image: "/assets/Hamburg.png", name: "University of Hamburg" },
+            { image: brusselImage, name: "University of Brussel", id: "university-of-brussel" },
+            { image: bhmImage, name: "Business and Hotel Management School", id: "business-and-hotel-management-school" },
+            { image: laXeniaImage, name: "La Xenia International Institute", id: "la-xenia-international-institute" },
+
         ],
     },
 
     france: {
         name: "France",
-        heroImage: "/assets/FranceBanner.png",
+        image: heroImage4,
         heroText: "Study in France – A Gateway to Excellence",
 
         featuredUniversities: [
-            { image: "/assets/Sorbonne.png", name: "Sorbonne University" },
-            { image: "/assets/SciencesPo.png", name: "Sciences Po Paris" },
-            { image: "/assets/INSEAD.png", name: "INSEAD Business School" },
+            { image: escClermontImage, name: "ESC Clermont Business School", id: "esc-clermont-business-school" },
+            { image: neomaImage, name: "NEOMA Business School", id: "neoma-business-school" },
         ],
 
         whyStudyHere: `France is one of the leading study destinations, known for its 
@@ -82,162 +121,151 @@ const countries = {
         it is a top choice for international students.`,
 
         popularUniversities: [
-            { image: "/assets/ESSEC.png", name: "ESSEC Business School" },
-            { image: "/assets/HEC.png", name: "HEC Paris" },
-            { image: "/assets/Polytechnique.png", name: "École Polytechnique" },
+            { image: amsterdamImage, name: "Amsterdam Campus", id: "amsterdam-campus" },
+            { image: berlinImage, name: "Berlin International University", id: "berlin-international-university" },
+            { image: hamburgImage, name: "University of Hamburg", id: "university-of-hamburg" },
+
         ],
     },
 
     switzerland: {
         name: "Switzerland",
-        heroImage: "/assets/SwitzerlandBanner.png",
+        image: heroImage5,
         heroText: "Study in Switzerland – Excellence in Education and Innovation",
         featuredUniversities: [
-            { image: "/assets/ETHZurich.png", name: "ETH Zurich" },
-            { image: "/assets/UniversityGeneva.png", name: "University of Geneva" },
-            { image: "/assets/EPFL.png", name: "École Polytechnique Fédérale de Lausanne (EPFL)" },
+            { image: bhmImage, name: "Business and Hotel Management School", id: "business-and-hotel-management-school" },
+            { image: laXeniaImage, name: "La Xenia International Institute", id: "la-xenia-international-institute" },
+            { image: ibaImage, name: "International Business Academy", id: "international-business-academy" }
         ],
         whyStudyHere: `Switzerland is known for its high academic standards, top-ranked universities, 
         and strong research programs. It offers an international environment, innovation-driven 
         education, and numerous career opportunities in finance, pharmaceuticals, and hospitality.`,
         popularUniversities: [
-            { image: "/assets/UniversityZurich.png", name: "University of Zurich" },
-            { image: "/assets/Lucerne.png", name: "Lucerne University of Applied Sciences" },
-            { image: "/assets/StGallen.png", name: "University of St. Gallen" },
+            { image: amsterdamImage, name: "Amsterdam Campus", id: "amsterdam-campus" },
+            { image: berlinImage, name: "Berlin International University", id: "berlin-international-university" },
+            { image: hamburgImage, name: "University of Hamburg", id: "university-of-hamburg" },
+
         ],
     },
 
     singapore: {
         name: "Singapore",
-        heroImage: "/assets/SingaporeBanner.png",
+        image: heroImage6,
         heroText: "Study in Singapore – A Global Hub for Education and Innovation",
         featuredUniversities: [
-            { image: "/assets/NUS.png", name: "National University of Singapore (NUS)" },
-            { image: "/assets/NTU.png", name: "Nanyang Technological University (NTU)" },
-            { image: "/assets/SIM.png", name: "Singapore Institute of Management (SIM)" },
+            { image: australasiaImage, name: "Academic of Australasia College", id: "australasia-college" },
         ],
         whyStudyHere: `Singapore is a leading education hub, offering world-class universities, 
         cutting-edge research, and strong industry connections. Its strategic location, safe 
         environment, and diverse culture make it a preferred study destination.`,
         popularUniversities: [
-            { image: "/assets/SUTD.png", name: "Singapore University of Technology and Design (SUTD)" },
-            { image: "/assets/JamesCook.png", name: "James Cook University Singapore" },
-            { image: "/assets/SMU.png", name: "Singapore Management University (SMU)" },
+            { image: neomaImage, name: "NEOMA Business School", id: "neoma-business-school" },
+            { image: wittenborgImage, name: "Wittenborg University", id: "wittenborg-university" },
+            { image: amsterdamImage, name: "Amsterdam Campus", id: "amsterdam-campus" },
         ],
     },
 
     malaysia: {
         name: "Malaysia",
-        heroImage: "/assets/MalaysiaBanner.png",
+        image: heroImage7,
         heroText: "Study in Malaysia – Affordable and Quality Education",
         featuredUniversities: [
-            { image: "/assets/UM.png", name: "University of Malaya" },
-            { image: "/assets/UKM.png", name: "Universiti Kebangsaan Malaysia" },
-            { image: "/assets/UPM.png", name: "Universiti Putra Malaysia" },
+            { image: spectrumImage, name: "Spectrum University College", id: "spectrum-university-college" },
         ],
         whyStudyHere: `Malaysia is known for affordable tuition fees, diverse cultural experiences, 
         and high-quality education. With globally recognized universities and a lower cost of 
         living, it is a great choice for international students.`,
         popularUniversities: [
-            { image: "/assets/Taylor.png", name: "Taylor's University" },
-            { image: "/assets/Monash.png", name: "Monash University Malaysia" },
-            { image: "/assets/Sunway.png", name: "Sunway University" },
+            { image: berlinImage, name: "Berlin International University", id: "berlin-international-university" },
+            { image: hamburgImage, name: "University of Hamburg", id: "university-of-hamburg" },
+            { image: johnPaulImage, name: "John Paul Secondary University", id: "john-paul-secondary-university" },
         ],
     },
 
     netherlands: {
         name: "Netherlands",
-        heroImage: "/assets/NetherlandsBanner.png",
+        image: heroImage8,
         heroText: "Study in Netherlands – A Global Hub for Higher Education",
         featuredUniversities: [
-            { image: "/assets/UvA.png", name: "University of Amsterdam" },
-            { image: "/assets/TUe.png", name: "Eindhoven University of Technology" },
-            { image: "/assets/Leiden.png", name: "Leiden University" },
+            { image: wittenborgImage, name: "Wittenborg University", id: "wittenborg-university" },
+            { image: amsterdamImage, name: "Amsterdam Campus", id: "amsterdam-campus" },
         ],
         whyStudyHere: `The Netherlands offers high-quality education, innovative research opportunities, 
         and a welcoming international environment. Many programs are taught in English, making it 
         an attractive destination for students worldwide.`,
         popularUniversities: [
-            { image: "/assets/Delft.png", name: "Delft University of Technology" },
-            { image: "/assets/Utrecht.png", name: "Utrecht University" },
-            { image: "/assets/Groningen.png", name: "University of Groningen" },
+            { image: miamiImage, name: "Miami Regional University", id: "miami-regional-university" },
+            { image: manipalImage, name: "Manipal University", id: "manipal-university" },
+            { image: bhmImage, name: "Business and Hotel Management School", id: "business-and-hotel-management-school" },
+
         ],
     },
 
     poland: {
         name: "Poland",
-        heroImage: "/assets/PolandBanner.png",
+        image: heroImage9,
         heroText: "Study in Poland – Affordable and High-Quality Education",
         featuredUniversities: [
-            { image: "/assets/Warsaw.png", name: "University of Warsaw" },
-            { image: "/assets/Jagiellonian.png", name: "Jagiellonian University" },
-            { image: "/assets/WUT.png", name: "Warsaw University of Technology" },
+            { image: johnPaulImage, name: "John Paul Secondary University", id: "john-paul-secondary-university" },
         ],
         whyStudyHere: `Poland offers top universities, affordable tuition fees, and a rich 
         cultural experience. With a growing economy and high-quality education, it attracts 
         students from all over the world.`,
         popularUniversities: [
-            { image: "/assets/Poznan.png", name: "Poznań University of Technology" },
-            { image: "/assets/Lodz.png", name: "Lodz University of Technology" },
-            { image: "/assets/AGH.png", name: "AGH University of Science and Technology" },
+            { image: wittenborgImage, name: "Wittenborg University", id: "wittenborg-university" },
+            { image: trinityImage, name: "Trinity Western University", id: "trinity-western-university" },
         ],
     },
 
     uae: {
         name: "United Arab Emirates",
-        heroImage: "/assets/UAEBanner.png",
+        image: heroImage10,
         heroText: "Study in UAE – A Hub for Business and Innovation",
         featuredUniversities: [
-            { image: "/assets/UAEU.png", name: "United Arab Emirates University" },
-            { image: "/assets/Khalifa.png", name: "Khalifa University" },
-            { image: "/assets/AUD.png", name: "American University in Dubai" },
+            { image: manipalImage, name: "Manipal University", id: "manipal-university" },
         ],
         whyStudyHere: `The UAE offers world-class education, strategic location, and a vibrant 
         business environment. It provides modern infrastructure, innovation-focused programs, 
         and global career opportunities.`,
         popularUniversities: [
-            { image: "/assets/AbuDhabi.png", name: "Abu Dhabi University" },
-            { image: "/assets/Zayed.png", name: "Zayed University" },
-            { image: "/assets/SorbonneAbuDhabi.png", name: "Sorbonne University Abu Dhabi" },
+            { image: berlinImage, name: "Berlin International University", id: "berlin-international-university" },
+            { image: hamburgImage, name: "University of Hamburg", id: "university-of-hamburg" },
+            { image: johnPaulImage, name: "John Paul Secondary University", id: "john-paul-secondary-university" },
         ],
     },
 
     india: {
         name: "India",
-        heroImage: "/assets/IndiaBanner.png",
+        image: heroImage11,
         heroText: "Study in India – Excellence in Education and Innovation",
         featuredUniversities: [
-            { image: "/assets/IITDelhi.png", name: "IIT Delhi" },
-            { image: "/assets/IIMB.png", name: "IIM Bangalore" },
-            { image: "/assets/JNU.png", name: "Jawaharlal Nehru University" },
+            { image: waxsenImage, name: "Woxsen University", id: "waxsen-university" },
         ],
         whyStudyHere: `India is home to prestigious universities, affordable education, and a 
         dynamic job market. With strong research programs and innovation-driven learning, it 
         is an attractive destination for students worldwide.`,
         popularUniversities: [
-            { image: "/assets/IITBombay.png", name: "IIT Bombay" },
-            { image: "/assets/AIIMS.png", name: "AIIMS" },
-            { image: "/assets/NIT.png", name: "NIT Trichy" },
+            { image: miamiImage, name: "Miami Regional University", id: "miami-regional-university" },
+            { image: trinityImage, name: "Trinity Western University", id: "trinity-western-university" },
+            { image: torontoYorkImage, name: "Toronto York University", id: "toronto-york-university" },
         ],
     },
 
     belgium: {
         name: "Belgium",
-        heroImage: "/assets/BelgiumBanner.png",
+        image: heroImage12,
         heroText: "Study in Belgium – A European Hub for Quality Education",
         featuredUniversities: [
-            { image: "/assets/KULeuven.png", name: "KU Leuven" },
-            { image: "/assets/UGent.png", name: "Ghent University" },
-            { image: "/assets/UCLouvain.png", name: "Université catholique de Louvain (UCLouvain)" },
+            { image: brusselImage, name: "University of Brussel", id: "university-of-brussel" },
         ],
         whyStudyHere: `Belgium is home to some of the world's oldest and most respected universities, 
             offering high-quality education, multicultural experiences, and excellent research opportunities. 
             Its central location in Europe provides students with access to international career opportunities 
             and a vibrant student life.`,
         popularUniversities: [
-            { image: "/assets/VUB.png", name: "Vrije Universiteit Brussel (VUB)" },
-            { image: "/assets/UAntwerp.png", name: "University of Antwerp" },
-            { image: "/assets/ULB.png", name: "Université Libre de Bruxelles (ULB)" },
+            { image: johnPaulImage, name: "John Paul Secondary University", id: "john-paul-secondary-university" },
+            { image: davisImage, name: "Davis University", id: "davis-university" },
+            { image: eduglobalImage, name: "EduGlobal College", id: "eduglobal-college" },
         ],
     },
 
