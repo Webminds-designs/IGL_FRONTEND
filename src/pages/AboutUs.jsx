@@ -96,8 +96,6 @@ const AboutUs = () => {
         </div>
       </section>
 
-
-
       {/* Who We Are Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-20 py-8 md:py-8">
         <div className="flex items-center pt-4">
@@ -109,8 +107,7 @@ const AboutUs = () => {
         <p className="text-lg md:text-2xl lg:text-[36px] xl:text-[36px] mt-4 md:mt-6 text-gray-800">
           At Institute of Global Languages (IGL), We Specialize In{" "}
           <span className="text-[#787878]">
-            Helping Sri Lankan Students Achieve Their Dream Of Studying
-            Abroad.{" "}
+            Helping Sri Lankan Students Achieve Their Dream Of Studying Abroad.{" "}
           </span>
           With A Commitment To Excellence, We Provide{" "}
           <span className="text-[#787878]">
@@ -133,7 +130,9 @@ const AboutUs = () => {
               <p className="text-xl md:text-[36px] font-medium text-black">
                 10+
               </p>
-              <p className="text-[#787878] text-[16px] md:text-base">Countries</p>
+              <p className="text-[#787878] text-[16px] md:text-base">
+                Countries
+              </p>
             </div>
             <div className="text-center">
               <p className="text-xl md:text-[36px] font-medium text-black">
