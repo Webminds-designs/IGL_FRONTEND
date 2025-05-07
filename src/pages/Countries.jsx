@@ -40,15 +40,15 @@ import AE from "../assets/uaeFlag.png";
 import IN from "../assets/indiaFlag.png";
 import BE from "../assets/belgiumFlag.png";
 
-import GB from '../assets/GB.jpg'; // Placeholder for UK flag (Great Britain)
-import AU from '../assets/AU.png'; // Placeholder for Australia flag
-import AT from '../assets/AT.png'; // Placeholder for Austria flag
-import DK from '../assets/DK.png'; // Placeholder for Denmark flag
-import IE from '../assets/IE.png'; // Placeholder for Ireland flag
-import FI from '../assets/FI.png'; // Placeholder for Finland flag
-import HU from '../assets/HU.png'; // Placeholder for Hungary flag
-import IT from '../assets/IT.png'; // Placeholder for Italy flag
-import NZ from '../assets/NZ.png'; // Placeholder for New Zealand flag
+import GB from '../assets/GB.jpg';
+import AU from '../assets/AU.png';
+import AT from '../assets/AT.png';
+import DK from '../assets/DK.png';
+import IE from '../assets/IE.png';
+import FI from '../assets/FI.png';
+import HU from '../assets/HU.png';
+import IT from '../assets/IT.png';
+import NZ from '../assets/NZ.png';
 import CN from '../assets/CN.png';
 
 const Countries = () => {
