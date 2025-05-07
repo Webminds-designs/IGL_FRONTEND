@@ -15,6 +15,18 @@ import uaeImage from '../assets/uae.jpg';
 import indiaImage from '../assets/india.jpg';
 import belgiumImage from '../assets/belgium.jpg';
 
+
+import heroImageUK from '../assets/heroImageUK.jpg'; // Placeholder - replace with actual path
+import heroImageAustralia from '../assets/heroImageAustralia.jpg'; // Placeholder - replace with actual path
+import heroImageAustria from '../assets/heroImageAustria.jpg'; // Placeholder - replace with actual path
+import heroImageDenmark from '../assets/heroImageDenmark.jpg'; // Placeholder - replace with actual path
+import heroImageIreland from '../assets/heroImageIreland.jpg'; // Placeholder - replace with actual path
+import heroImageFinland from '../assets/heroImageFinland.jpg'; // Placeholder - replace with actual path
+import heroImageHungary from '../assets/heroImageHungary.jpg'; // Placeholder - replace with actual path
+import heroImageItaly from '../assets/heroImageItaly.jpg'; // Placeholder - replace with actual path
+import heroImageNewZealand from '../assets/heroImageNewZealand.jpg'; // Placeholder - replace with actual path
+import heroImageChina from '../assets/heroImageChina.jpg';
+
 import US from "../assets/usaFlag.png";
 import CA from "../assets/canadaFlag.png";
 import DE from "../assets/germanyFlag.png";
@@ -27,6 +39,17 @@ import PL from "../assets/polandFlag.png";
 import AE from "../assets/uaeFlag.png";
 import IN from "../assets/indiaFlag.png";
 import BE from "../assets/belgiumFlag.png";
+
+import GB from '../assets/GB.jpg'; // Placeholder for UK flag (Great Britain)
+import AU from '../assets/AU.png'; // Placeholder for Australia flag
+import AT from '../assets/AT.png'; // Placeholder for Austria flag
+import DK from '../assets/DK.png'; // Placeholder for Denmark flag
+import IE from '../assets/IE.png'; // Placeholder for Ireland flag
+import FI from '../assets/FI.png'; // Placeholder for Finland flag
+import HU from '../assets/HU.png'; // Placeholder for Hungary flag
+import IT from '../assets/IT.png'; // Placeholder for Italy flag
+import NZ from '../assets/NZ.png'; // Placeholder for New Zealand flag
+import CN from '../assets/CN.png';
 
 const Countries = () => {
 
@@ -42,7 +65,18 @@ const Countries = () => {
         { image: polandImage, country: "Poland", flag: PL, countryCode: "poland" },
         { image: uaeImage, country: "UAE", flag: AE, countryCode: "uae" },
         { image: indiaImage, country: "India", flag: IN, countryCode: "india" },
-        { image: belgiumImage, country: "Belgium", flag: BE, countryCode: "belgium" }
+        { image: belgiumImage, country: "Belgium", flag: BE, countryCode: "belgium" },
+        // Added new destinations with images and flags
+        { image: heroImageUK, country: "United Kingdom", flag: GB, countryCode: "uk" },
+        { image: heroImageAustralia, country: "Australia", flag: AU, countryCode: "australia" },
+        { image: heroImageAustria, country: "Austria", flag: AT, countryCode: "austria" },
+        { image: heroImageDenmark, country: "Denmark", flag: DK, countryCode: "denmark" },
+        { image: heroImageIreland, country: "Ireland", flag: IE, countryCode: "ireland" },
+        { image: heroImageFinland, country: "Finland", flag: FI, countryCode: "finland" },
+        { image: heroImageHungary, country: "Hungary", flag: HU, countryCode: "hungary" }, // Changed "Hungaria" to "Hungary" for standard naming
+        { image: heroImageItaly, country: "Italy", flag: IT, countryCode: "italy" },
+        { image: heroImageNewZealand, country: "New Zealand", flag: NZ, countryCode: "newZealand" }, // Matched countryCode with your previous object
+        { image: heroImageChina, country: "China", flag: CN, countryCode: "china" }
     ];
 
     return (
