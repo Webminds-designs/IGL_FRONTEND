@@ -62,14 +62,14 @@ const Footer = () => {
 
             <div className="mt-12 border-t border-gray-400 px-6 sm:px-10 pt-6 text-gray-600 text-xs sm:text-sm flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
                 <div className="flex flex-wrap gap-4 justify-center sm:justify-start">
-                    <a href="#" className="text-black">Home</a>
-                    <a href="#" className="text-black">About Us</a>
-                    <a href="#" className="text-black">Countries</a>
-                    <a href="#" className="text-black">Universities</a>
+                    <a href="/" className="text-black">Home</a>
+                    <a href="/aboutus" className="text-black">About Us</a>
+                    <a href="/countries" className="text-black">Countries</a>
+                    <a href="/universities" className="text-black">Universities</a>
                 </div>
                 <p className="text-black text-center sm:text-left">
                     © 2025 IGL Student Migration. All Rights Reserved. A {" "}
-                    <a href="#" className="text-blue-600">Webminds</a> Website.
+                    <a href="https://webmindsdesigns.com/" className="text-blue-600">Webminds</a> Website.
                 </p>
             </div>
         </div>
