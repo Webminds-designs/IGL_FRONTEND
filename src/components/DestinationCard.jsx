@@ -1,12 +1,31 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import PropTypes from 'prop-types'; // Add PropTypes for type checking
 
 const DestinationCard = ({ image, country, flag, countryCode }) => {
     const navigate = useNavigate();
 
+
     const handleLearnMore = () => {
-        navigate(`/individualcountry/${countryCode}`);
+        // Debug log to check the value
+        console.log('countryCode received:', countryCode);
+
+        // Early return with user feedback if countryCode is missing
+        if (!countryCode) {
+            console.error('Country code is required');
+            alert('Unable to navigate: Country code is missing');
+            return;
+        }
+
+        try {
+            const formattedCode = countryCode.toString().trim().toLowerCase();
+            console.log('Navigating to country:', formattedCode);
+            navigate(`/individualcountry/${formattedCode}`);
+        } catch (error) {
+            console.error('Navigation error:', error);
+        }
     };
+
 
     return (
         <div className="relative group overflow-hidden rounded-xl">
@@ -16,6 +35,7 @@ const DestinationCard = ({ image, country, flag, countryCode }) => {
                 <img
                     src={image}
                     alt={country}
+                    countryCode={countryCode}
                     className="w-full h-full object-cover rounded-lg transition duration-300 ease-in-out group-hover:blur-sm"
                 />
 
@@ -43,6 +63,14 @@ const DestinationCard = ({ image, country, flag, countryCode }) => {
             </div>
         </div>
     );
+};
+
+
+DestinationCard.propTypes = {
+    image: PropTypes.string.isRequired,
+    country: PropTypes.string.isRequired,
+    flag: PropTypes.string.isRequired,
+    countryCode: PropTypes.string.isRequired
 };
 
 export default DestinationCard;
