@@ -47,7 +47,6 @@ const faqs = [
 
 const AboutUs = () => {
   const [openIndex, setOpenIndex] = useState(null);
-  const [currentSlide, setCurrentSlide] = useState(0);
 
   const toggleAccordion = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -85,6 +84,7 @@ const AboutUs = () => {
         <img
           src={heroImage}
           alt="Hero"
+          loading="lazy"
           className="w-full h-full object-cover object-center"
         />
         <div className="absolute bottom-0 left-0 z-10 text-white text-left px-6 md:px-10 pb-4 md:pb-10 lg:pb-12 xl:pb-14">
@@ -159,6 +159,7 @@ const AboutUs = () => {
         <img
           src={missionImage}
           alt="Mission"
+          loading="lazy"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/40 flex items-center justify-center px-4">
@@ -202,6 +203,7 @@ const AboutUs = () => {
             <img
               src={servise}
               alt="Counseling Session"
+              loading="lazy"
               className="rounded-xl w-full h-116 aspect-[4/3] md:aspect-[3/4] lg:aspect-[4/3] object-cover"
             />
           </div>
@@ -259,6 +261,7 @@ const AboutUs = () => {
             <img
               src={personImage}
               alt="Farzan Cader"
+              loading="lazy"
               className="w-48 h-60 md:w-64 md:h-80 mx-auto rounded-lg mb-4 md:mb-6 object-cover"
             />
             <h3 className="text-lg md:text-xl lg:text-2xl font-medium">
@@ -272,6 +275,7 @@ const AboutUs = () => {
             <img
               src={personImage2}
               alt="Shahiq Cader"
+              loading="lazy"
               className="w-48 h-60 md:w-64 md:h-80 mx-auto rounded-lg mb-4 md:mb-6 object-cover"
             />
             <h3 className="text-lg md:text-xl lg:text-2xl font-medium">
