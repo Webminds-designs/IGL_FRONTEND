@@ -1,9 +1,11 @@
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import universitiesImage from '../assets/universities.jpg';
 import UniversityCard from "../components/UniversityCard";
 
-// Importing University Images
+// University images
 import waxsenImage from '../assets/waxsen.jpg';
 import spectrumImage from '../assets/spectrum.jpg';
 import australasiaImage from '../assets/australasia.jpg';
@@ -25,7 +27,11 @@ import bhmImage from '../assets/bhm.jpg';
 import laXeniaImage from '../assets/la-xenia.jpg';
 import ibaImage from '../assets/iba.jpg';
 
-
+// Animation variants
+const fadeUpVariant = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
 
 const universities = [
     { image: waxsenImage, name: "Waxsen University", id: "waxsen-university" },
@@ -49,24 +55,41 @@ const universities = [
     { image: laXeniaImage, name: "La Xenia International Institute", id: "la-xenia-international-institute" },
     { image: ibaImage, name: "International Business Academy", id: "international-business-academy" }
 ];
+
 const Universities = () => {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true });
+
     return (
         <div className="min-h-full">
-            {/* Navbar */}
             <Navbar />
 
             {/* Hero Section */}
-            <section className="relative w-full h-[100vh] bg-cover bg-center"
-                style={{ backgroundImage: `url(${universitiesImage})` }}>
-                <div className="absolute inset-0 bg-opacity-90"></div>
-                <div className="absolute bottom-0 left-0 z-10 text-white text-left px-6 md:px-10 pb-4 md:pb-10 lg:pb-12 xl:pb-14">
-                    <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-7xl font-base mb-1 md:mb-2 leading-tight md:leading-snug lg:leading-relaxed">  Discover World-Class <br /> Institutions For Your Future
+            <section
+                className="relative w-full h-[100vh] bg-cover bg-center"
+                style={{ backgroundImage: `url(${universitiesImage})` }}
+            >
+                <div className="absolute inset-0 bg-black opacity-50"></div>
+                <motion.div
+                    className="absolute bottom-0 left-0 z-10 text-white text-left px-6 md:px-10 pb-4 md:pb-10 lg:pb-12 xl:pb-14"
+                    variants={fadeUpVariant}
+                    initial="hidden"
+                    animate="visible"
+                >
+                    <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-7xl font-base mb-1 md:mb-2 leading-tight md:leading-snug lg:leading-relaxed">
+                        Discover World-Class <br /> Institutions For Your Future
                     </h1>
-                </div>
+                </motion.div>
             </section>
 
             {/* Description Section */}
-            <section className="py-16 px-6 text-left">
+            <motion.section
+                className="py-16 px-6 text-left"
+                ref={ref}
+                variants={fadeUpVariant}
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+            >
                 <div className="max-w-7xl mx-auto">
                     <div className="flex items-center pt-6 md:pt-10">
                         <div className="w-14 md:w-20 border-t border-gray-500"></div>
@@ -84,18 +107,25 @@ const Universities = () => {
                         Find The Perfect Place To Achieve Your Academic And Professional Goals.
                     </p>
                 </div>
-            </section>
+            </motion.section>
 
             {/* University Grid Section */}
             <section className="max-w-7xl mx-auto mb-4 px-6 py-12">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16">
                     {universities.map((university, index) => (
-                        <UniversityCard
+                        <motion.div
                             key={index}
-                            image={university.image}
-                            name={university.name}
-                            id={university.id} // Pass the university ID
-                        />
+                            variants={fadeUpVariant}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.2 }}
+                        >
+                            <UniversityCard
+                                image={university.image}
+                                name={university.name}
+                                id={university.id}
+                            />
+                        </motion.div>
                     ))}
                 </div>
             </section>
