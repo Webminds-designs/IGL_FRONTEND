@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink, useNavigate, useLocation } from "react-router-dom"; // Add useLocation
 import PropTypes from 'prop-types';
+import IGLlogo from "../assets/IGL logo.png"; // Import your logo image
 
 const Navbar = ({ fontColor, bgColor }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -40,8 +41,15 @@ const Navbar = ({ fontColor, bgColor }) => {
         >
             <div className="flex justify-between items-center w-full">
                 {/* Logo - clickable */}
-                <div className={`text-2xl font-bold cursor-pointer ${textColor}`}>
-                    IGLLOGO
+                <div
+                    className={`cursor-pointer ${textColor}`}
+                    onClick={() => navigate('/')}
+                >
+                    <img
+                        src={IGLlogo}
+                        alt="IGL Logo"
+                        className="h-12 w-auto"
+                    />
                 </div>
 
                 {/* Navigation links */}

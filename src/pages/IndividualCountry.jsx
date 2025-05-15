@@ -4,10 +4,21 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import UniversityCard from "../components/UniversityCard";
 import countries from "../Data/countries";
+import { motion } from "framer-motion"; // <-- import motion
 
 const IndividualCountry = () => {
   const { countryCode } = useParams();
   const country = countries[countryCode];
+
+  // Animation variant
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 80 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
 
   if (!country) {
     return <div>Country not found</div>;
@@ -33,7 +44,13 @@ const IndividualCountry = () => {
         </div>
 
         {/* Featured Universities Section */}
-        <section className="py-8 md:py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
+        <motion.section
+          className="py-8 md:py-12 lg:py-16 px-4 sm:px-6 lg:px-8"
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           <div className="max-w-7xl mx-auto">
             <div className="flex items-center mb-4">
               <div className="w-12 md:w-20 border-t border-gray-500"></div>
@@ -51,15 +68,21 @@ const IndividualCountry = () => {
                   image={university.image}
                   name={university.name}
                   id={university.id}
-                  lazyLoad={true} // Pass lazyLoad prop to UniversityCard
+                  lazyLoad={true}
                 />
               ))}
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Why Study Here Section */}
-        <div className="bg-white px-4 sm:px-6 lg:px-8 py-8 md:py-2">
+        <motion.div
+          className="bg-white px-4 sm:px-6 lg:px-8 py-8 md:py-2"
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           <div className="max-w-7xl mx-auto">
             <div className="flex items-center mb-4">
               <div className="w-12 md:w-20 border-t border-gray-500"></div>
@@ -71,10 +94,16 @@ const IndividualCountry = () => {
               {country.whyStudyHere}
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Popular Universities Section */}
-        <section className="px-4 sm:px-6 lg:px-8 py-8 md:py-5">
+        <motion.section
+          className="px-4 sm:px-6 lg:px-8 py-8 md:py-5"
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           <div className="max-w-7xl mx-auto">
             <div className="flex items-center mb-4">
               <div className="w-12 md:w-20 border-t border-gray-500"></div>
@@ -93,22 +122,21 @@ const IndividualCountry = () => {
                   image={university.image}
                   name={university.name}
                   id={university.id}
-                  lazyLoad={true} // Pass lazyLoad prop to UniversityCard
+                  lazyLoad={true}
                 />
               ))}
             </div>
 
-            {/* Centered Explore More Button */}
             <div className="w-full flex justify-center mt-8 md:mt-12">
               <button
                 className="text-black py-2 px-6 md:py-3 md:px-10 border-2 border-black rounded-3xl 
-                                hover:bg-black hover:text-white transition-all duration-300 text-base md:text-[16px]"
+                            hover:bg-black hover:text-white transition-all duration-300 text-base md:text-[16px]"
               >
                 Explore More Universities
               </button>
             </div>
           </div>
-        </section>
+        </motion.section>
       </div>
       <Footer />
     </div>

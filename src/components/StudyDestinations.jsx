@@ -49,18 +49,23 @@ const StudyDestinations = () => {
                         image={australiaImage}
                         country="Australia"
                         flag={AU}
+                        countryCode="australia" // Add this prop
                     />
+
                     {/* United States */}
                     <DestinationCard
                         image={usaImage}
                         country="United States"
                         flag={US}
+                        countryCode="usa" // Add this prop
                     />
+
                     {/* Canada */}
                     <DestinationCard
                         image={canadaImage}
                         country="Canada"
                         flag={CA}
+                        countryCode="canada" // Add this prop
                     />
                 </div>
 

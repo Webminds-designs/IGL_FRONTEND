@@ -15,7 +15,6 @@ import uaeImage from '../assets/uae.jpg';
 import indiaImage from '../assets/india.jpg';
 import belgiumImage from '../assets/belgium.jpg';
 
-
 import heroImageUK from '../assets/heroImageUK.jpg'; // Placeholder - replace with actual path
 import heroImageAustralia from '../assets/heroImageAustralia.jpg'; // Placeholder - replace with actual path
 import heroImageAustria from '../assets/heroImageAustria.jpg'; // Placeholder - replace with actual path
@@ -52,7 +51,6 @@ import NZ from '../assets/NZ.png';
 import CN from '../assets/CN.png';
 
 const Countries = () => {
-
     const destinations = [
         { image: usaImage, country: "United States", flag: US, countryCode: "usa" },
         { image: canadaImage, country: "Canada", flag: CA, countryCode: "canada" },
@@ -73,9 +71,9 @@ const Countries = () => {
         { image: heroImageDenmark, country: "Denmark", flag: DK, countryCode: "denmark" },
         { image: heroImageIreland, country: "Ireland", flag: IE, countryCode: "ireland" },
         { image: heroImageFinland, country: "Finland", flag: FI, countryCode: "finland" },
-        { image: heroImageHungary, country: "Hungary", flag: HU, countryCode: "hungary" }, // Changed "Hungaria" to "Hungary" for standard naming
+        { image: heroImageHungary, country: "Hungary", flag: HU, countryCode: "hungary" },
         { image: heroImageItaly, country: "Italy", flag: IT, countryCode: "italy" },
-        { image: heroImageNewZealand, country: "New Zealand", flag: NZ, countryCode: "newZealand" }, // Matched countryCode with your previous object
+        { image: heroImageNewZealand, country: "New Zealand", flag: NZ, countryCode: "newZealand" },
         { image: heroImageChina, country: "China", flag: CN, countryCode: "china" }
     ];
 
@@ -115,7 +113,7 @@ const Countries = () => {
                 {destinations.map((destination, index) => (
                     <DestinationCard
                         key={index}
-                        image={destination.image}
+                        image={<img src={destination.image} alt={destination.country} loading="lazy" />}
                         country={destination.country}
                         flag={destination.flag}
                         countryCode={destination.countryCode}

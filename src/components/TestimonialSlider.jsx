@@ -6,16 +6,16 @@ const testimonials = [
     {
         quote:
             "I was overwhelmed by the visa process, but IGL’s expert guidance made everything smooth and stress-free. I am now studying in Canada with confidence.",
-        name: "John Doe",
+        name: "Buddhima Prabhashwara",
         position: "Media Director, Webminds",
-        image: "https://randomuser.me/api/portraits/men/45.jpg",
+        image: "https://cdn.pixabay.com/photo/2019/10/22/18/58/young-4565475_1280",
     },
     {
         quote:
             "IGL’s support throughout my application process was invaluable. They helped me secure a scholarship and now I am pursuing my dream degree.",
-        name: "Jane Smith",
+        name: "Supun Gunawardena",
         position: "Student, University of Melbourne",
-        image: "https://randomuser.me/api/portraits/women/44.jpg",
+        image: "https://pixabay.com/photos/man-business-entrepreneur-human-4398724/",
     },
 ];
 
