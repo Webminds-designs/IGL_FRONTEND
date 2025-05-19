@@ -145,7 +145,7 @@ const Universities = () => {
           initial="hidden"
           animate="visible"
         >
-          <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-7xl font-base mb-1 md:mb-2 leading-tight md:leading-snug lg:leading-relaxed">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-base mb-3 md:mb-5 leading-snug">
             Discover World-Class <br /> Institutions For Your Future
           </h1>
         </motion.div>
