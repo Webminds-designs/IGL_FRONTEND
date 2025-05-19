@@ -155,7 +155,7 @@ const Countries = () => {
       <section
         className="relative w-full h-[100vh] bg-cover bg-center"
         style={{ backgroundImage: `url(${bgImage})` }}
-        loading="lazy"
+        lazyload="true"
       >
         <div className="absolute bottom-0 left-0 z-10 text-white text-left px-6 md:px-10 pb-12 md:pb-20">
           <h1 className="text-2xl md:text-4xl lg:text-5xl font-base mb-3 md:mb-5">

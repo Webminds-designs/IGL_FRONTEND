@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import UniversityCard from "../components/UniversityCard";
 import countries from "../Data/countries";
-// import { motion } from "framer-motion"; // <-- import motion
+import { motion } from "framer-motion"; // <-- import motion
 
 const IndividualCountry = () => {
   const { countryCode } = useParams();
