@@ -79,9 +79,11 @@ const StudyDestinations = () => {
         </div>
 
         <div className="flex justify-center">
-          <button className="mt-10 sm:mt-16 px-6 py-2 border font-bold items-center border-black rounded-full hover:bg-black hover:text-white transition-all text-sm sm:text-base">
-            View More Countries
-          </button>
+          <Link to="/countries" className="cursor-pointer">
+            <button className="mt-10 sm:mt-16 px-6 py-2 border font-bold items-center border-black rounded-full hover:bg-black hover:text-white transition-all text-sm sm:text-base cursor-pointer">
+              View More Countries
+            </button>
+          </Link>
         </div>
       </div>
     </div>
