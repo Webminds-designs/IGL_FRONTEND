@@ -9,11 +9,13 @@ import IndividualCountry from "./pages/IndividualCountry";
 import IndividualUniversity from "./pages/IndividualUniversity";
 import RegistrationForm from "./pages/RegistrationForm";
 import ScrolTop from "./components/ScrolTop";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <Router>
       <ScrolTop />
+      <Toaster position="top-center" reverseOrder={false} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/aboutus" element={<AboutUs />} />

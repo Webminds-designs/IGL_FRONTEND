@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import StepIndicator from "../components/StepIndicator";
 import { CheckCircle } from "lucide-react";
 import emailjs from "@emailjs/browser"; // EmailJS import
+import toast from "react-hot-toast";
 
 const RegistrationForm = () => {
   const [step, setStep] = useState(1);
@@ -128,11 +129,20 @@ const RegistrationForm = () => {
         .then(
           (result) => {
             console.log("Email successfully sent!", result.text);
+            const roasts = [
+              "Form submitted! That’s one small click for you, one giant leap for your education 🌍.",
+              "You just took the first step toward your global future — we love to see it!",
+              "Dreams don’t work unless you do — and you just did. Onward to new adventures! 🎓",
+              "Your journey to international education starts now. Passport to greatness: loading...",
+              "You submitted the form. The world is now officially your classroom ✈️📚.",
+            ];
+            toast.success(roasts[Math.floor(Math.random() * roasts.length)]);
+            setSubmitted(true);
             setSubmitted(true);
           },
           (error) => {
             console.error("Email sending failed:", error.text);
-            alert("Submission failed. Please try again.");
+            toast.error("Failed to send email. Please try again later.");
           }
         );
     }
