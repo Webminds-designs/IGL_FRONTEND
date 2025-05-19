@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import universitiesImage from "../assets/universities.jpg";
 import UniversityCard from "../components/UniversityCard";
-
+import { motion } from "framer-motion";
 // University images
 import waxsenImage from "../assets/waxsen.jpg";
 import spectrumImage from "../assets/spectrum.jpg";
