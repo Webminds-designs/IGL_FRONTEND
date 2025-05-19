@@ -2,6 +2,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import bgImage from "../assets/countries.jpg";
 import DestinationCard from "../components/DestinationCard";
+
 import usaImage from "../assets/usa.jpg";
 import canadaImage from "../assets/canada.jpg";
 import germanyImage from "../assets/germany.jpg";
@@ -15,15 +16,15 @@ import uaeImage from "../assets/uae.jpg";
 import indiaImage from "../assets/india.jpg";
 import belgiumImage from "../assets/belgium.jpg";
 
-import heroImageUK from "../assets/heroImageUK.jpg"; // Placeholder - replace with actual path
-import heroImageAustralia from "../assets/heroImageAustralia.jpg"; // Placeholder - replace with actual path
-import heroImageAustria from "../assets/heroImageAustria.jpg"; // Placeholder - replace with actual path
-import heroImageDenmark from "../assets/heroImageDenmark.jpg"; // Placeholder - replace with actual path
-import heroImageIreland from "../assets/heroImageIreland.jpg"; // Placeholder - replace with actual path
-import heroImageFinland from "../assets/heroImageFinland.jpg"; // Placeholder - replace with actual path
-import heroImageHungary from "../assets/heroImageHungary.jpg"; // Placeholder - replace with actual path
-import heroImageItaly from "../assets/heroImageItaly.jpg"; // Placeholder - replace with actual path
-import heroImageNewZealand from "../assets/heroImageNewZealand.jpg"; // Placeholder - replace with actual path
+import heroImageUK from "../assets/heroImageUK.jpg";
+import heroImageAustralia from "../assets/heroImageAustralia.jpg";
+import heroImageAustria from "../assets/heroImageAustria.jpg";
+import heroImageDenmark from "../assets/heroImageDenmark.jpg";
+import heroImageIreland from "../assets/heroImageIreland.jpg";
+import heroImageFinland from "../assets/heroImageFinland.jpg";
+import heroImageHungary from "../assets/heroImageHungary.jpg";
+import heroImageItaly from "../assets/heroImageItaly.jpg";
+import heroImageNewZealand from "../assets/heroImageNewZealand.jpg";
 import heroImageChina from "../assets/heroImageChina.jpg";
 
 import US from "../assets/usaFlag.png";
@@ -49,6 +50,8 @@ import HU from "../assets/HU.png";
 import IT from "../assets/IT.png";
 import NZ from "../assets/NZ.png";
 import CN from "../assets/CN.png";
+
+import { motion } from "framer-motion";
 
 const Countries = () => {
   const destinations = [
@@ -94,7 +97,6 @@ const Countries = () => {
       flag: BE,
       countryCode: "belgium",
     },
-    // Added new destinations with images and flags
     {
       image: heroImageUK,
       country: "United Kingdom",
@@ -180,28 +182,29 @@ const Countries = () => {
           <span className="text-gray-400">
             {" "}
             Top-Tier Education, Cultural Diversity, And Career Opportunities.
-          </span>
+          </span>{" "}
           Explore Your Options And Find The Perfect Place To Begin Your Academic
           Journey.
         </p>
       </div>
 
+      {/* Animated Destination Cards */}
       <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16">
         {destinations.map((destination, index) => (
-          <DestinationCard
+          <motion.div
             key={index}
-            // image={
-            //   <img
-            //     src={destination.image}
-            //     alt={destination.country}
-            //     loading="lazy"
-            //   />
-            // }
-            image={destination.image}
-            country={destination.country}
-            flag={destination.flag}
-            countryCode={destination.countryCode}
-          />
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.05 }}
+            viewport={{ once: true }}
+          >
+            <DestinationCard
+              image={destination.image}
+              country={destination.country}
+              flag={destination.flag}
+              countryCode={destination.countryCode}
+            />
+          </motion.div>
         ))}
       </div>
 
