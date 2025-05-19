@@ -3,12 +3,12 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import StepIndicator from "../components/StepIndicator";
 import { CheckCircle } from "lucide-react";
+import emailjs from "@emailjs/browser"; // EmailJS import
 
 const RegistrationForm = () => {
   const [step, setStep] = useState(1);
   const [submitted, setSubmitted] = useState(false);
 
-  // State to store form data
   const [formData, setFormData] = useState({
     fullName: "",
     gender: "",
@@ -30,10 +30,8 @@ const RegistrationForm = () => {
     agree: false,
   });
 
-  // State to track validation errors
   const [errors, setErrors] = useState({});
 
-  // Handle input change
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData({
@@ -42,10 +40,8 @@ const RegistrationForm = () => {
     });
   };
 
-  // Validate fields for the current step
   const validateStep = () => {
     const newErrors = {};
-
     if (step === 1) {
       if (!formData.fullName) newErrors.fullName = "Full Name is required.";
       if (!formData.gender) newErrors.gender = "Gender is required.";
@@ -55,7 +51,6 @@ const RegistrationForm = () => {
       if (!formData.mobile) newErrors.mobile = "Mobile Number is required.";
       if (!formData.address) newErrors.address = "Address is required.";
     }
-
     if (step === 2) {
       if (!formData.qualification)
         newErrors.qualification = "Highest Academic Qualification is required.";
@@ -68,77 +63,19 @@ const RegistrationForm = () => {
         newErrors.studyDestination1 =
           "Preferred Study Destination is required.";
     }
-
     if (step === 3) {
       if (!formData.agree) newErrors.agree = "You must agree to the terms.";
     }
-
     setErrors(newErrors);
-    return Object.keys(newErrors).length === 0; // Return true if no errors
+    return Object.keys(newErrors).length === 0;
   };
 
-  // Handle next step
   const nextStep = () => {
     if (validateStep()) {
       setStep(step + 1);
     }
   };
 
-  // // Handle previous step
-  // const prevStep = () => {
-  //     setStep(step - 1);
-  // };
-
-  // Handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (validateStep()) {
-      setSubmitted(true);
-    }
-  };
-
-  // Restrict input to letters only
-  const restrictToLetters = (e) => {
-    const regex = /^[A-Za-z\s]*$/;
-    if (!regex.test(e.key) && e.key !== "Backspace") {
-      e.preventDefault();
-    }
-  };
-
-  // Restrict input to numbers only
-  const restrictToNumbers = (e) => {
-    const regex = /^[0-9]*$/;
-    if (!regex.test(e.key) && e.key !== "Backspace") {
-      e.preventDefault();
-    }
-  };
-
-  // Restrict year to past values
-  const restrictYear = (e) => {
-    const regex = /^[0-9]*$/;
-    if (!regex.test(e.key) && e.key !== "Backspace") {
-      e.preventDefault();
-    }
-    const currentYear = new Date().getFullYear();
-    const inputYear = parseInt(e.target.value + e.key, 10);
-    if (inputYear > currentYear && e.key !== "Backspace") {
-      e.preventDefault();
-    }
-  };
-
-  // Restrict date to 1-31
-  const restrictDate = (e) => {
-    const regex = /^[0-9]*$/;
-    if (!regex.test(e.key) && e.key !== "Backspace") {
-      e.preventDefault();
-    }
-    const inputDate = parseInt(e.target.value + e.key, 10);
-    if ((inputDate < 1 || inputDate > 31) && e.key !== "Backspace") {
-      e.preventDefault();
-    }
-  };
-
-  // Validate email format
   const validateEmail = (e) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!regex.test(e.target.value)) {
@@ -148,14 +85,65 @@ const RegistrationForm = () => {
     }
   };
 
+  const restrictToLetters = (e) => {
+    const regex = /^[A-Za-z\s]*$/;
+    if (!regex.test(e.key) && e.key !== "Backspace") e.preventDefault();
+  };
+
+  const restrictToNumbers = (e) => {
+    const regex = /^[0-9]*$/;
+    if (!regex.test(e.key) && e.key !== "Backspace") e.preventDefault();
+  };
+
+  const restrictYear = (e) => {
+    const regex = /^[0-9]*$/;
+    if (!regex.test(e.key) && e.key !== "Backspace") e.preventDefault();
+    const currentYear = new Date().getFullYear();
+    const inputYear = parseInt(e.target.value + e.key, 10);
+    if (inputYear > currentYear && e.key !== "Backspace") e.preventDefault();
+  };
+
+  const restrictDate = (e) => {
+    const regex = /^[0-9]*$/;
+    if (!regex.test(e.key) && e.key !== "Backspace") e.preventDefault();
+    const inputDate = parseInt(e.target.value + e.key, 10);
+    if ((inputDate < 1 || inputDate > 31) && e.key !== "Backspace")
+      e.preventDefault();
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validateStep()) {
+      // Send email via EmailJS
+      emailjs
+        .send(
+          "service_rf4dwi8", // ✅ Replace with your EmailJS service ID
+          "template_6370b6q", // ✅ Replace with your EmailJS template ID
+          {
+            ...formData,
+            dob: `${formData.year}-${formData.month}-${formData.date}`,
+          },
+          "Gy_U2G1sv98JkAhfs" // ✅ Replace with your EmailJS public key
+        )
+        .then(
+          (result) => {
+            console.log("Email successfully sent!", result.text);
+            setSubmitted(true);
+          },
+          (error) => {
+            console.error("Email sending failed:", error.text);
+            alert("Submission failed. Please try again.");
+          }
+        );
+    }
+  };
+
   return (
     <div
       style={{ backgroundColor: "rgb(255, 255, 255)" }}
       className="min-h-screen"
     >
       <Navbar />
-
-      {/* Header Section */}
       <div className="text-center mt-12 md:mt-24 lg:mt-28 py-8 md:py-12 px-4">
         <h3 className="text-gray-500 text-sm md:text-lg uppercase tracking-wide">
           STUDENT ASSESSMENT & REGISTRATION FORM
@@ -164,13 +152,11 @@ const RegistrationForm = () => {
           Start Your Study Abroad Journey With IGL Sri Lanka
         </h1>
         <p className="text-gray-600 text-xs md:text-sm mt-4 max-w-3xl mx-auto">
-          Fill Out This Quick Assessment To Check Your Eligibility And Take The
-          First Step Toward Studying Abroad. Our Experts Will Review Your
-          Details And Guide You Through The Process!
+          Fill out this quick assessment to check your eligibility. Our experts
+          will guide you!
         </p>
       </div>
 
-      {/* Form Section */}
       <div className="flex-1 max-w-3xl mx-auto w-full px-4 md:px-6 lg:px-8 py-6 md:py-10">
         {!submitted && <StepIndicator step={step} />}
         <div className="bg-white py-6 md:py-10 px-4 md:px-8 lg:px-12 rounded-4xl border border-gray-300">
@@ -183,9 +169,8 @@ const RegistrationForm = () => {
                 Submission Successful!
               </h2>
               <p className="text-gray-500 text-center text-sm md:text-base max-w-md">
-                Your assessment form has been submitted successfully. Our team
-                will review your details and get in touch with you shortly to
-                guide you through the next steps.
+                Your form has been submitted successfully. Our team will contact
+                you soon.
               </p>
             </div>
           ) : (
