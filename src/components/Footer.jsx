@@ -2,6 +2,7 @@ import { FaGlobe } from "react-icons/fa";
 import graduateImg from "../assets/graduate.jpg";
 import footerBg from "../assets/footer.jpg"; // Background image
 import logo from "../assets/IGL logo.png"; // Logo image
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -39,9 +40,11 @@ const Footer = () => {
 
       {/* Buttons */}
       <div className="mt-6 flex justify-center gap-4">
-        <button className="bg-black text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-lg font-base hover:bg-gray-800 cursor-pointer">
-          Get a Free Consultation
-        </button>
+        <Link to="/Register">
+          <button className="bg-black text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-lg font-base hover:bg-gray-800 cursor-pointer">
+            Get a Free Consultation
+          </button>
+        </Link>
       </div>
 
       <div className="mt-16 px-6 sm:px-10 flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
@@ -57,9 +60,11 @@ const Footer = () => {
             Turn Your Study <br /> Abroad Dream Into{" "}
             <span className="text-gray-500">Reality</span>
           </h3>
-          <button className="bg-black text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-lg font-base hover:bg-gray-800 cursor-pointer whitespace-nowrap">
-            Contact Us
-          </button>
+          <Link to="/contactus">
+            <button className="bg-black text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-lg font-base hover:bg-gray-800 cursor-pointer whitespace-nowrap">
+              Contact Us
+            </button>
+          </Link>
         </div>
       </div>
 
