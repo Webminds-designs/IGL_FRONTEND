@@ -88,7 +88,7 @@ const AboutUs = () => {
           className="w-full h-full object-cover object-center"
         />
         <div className="absolute bottom-0 left-0 z-10 text-white text-left px-6 md:px-10 pb-4 md:pb-10 lg:pb-12 xl:pb-14">
-          <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-7xl font-base mb-1 md:mb-2 leading-tight md:leading-snug lg:leading-relaxed">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-base mb-3 md:mb-5 leading-snug">
             Empowering Futures, Connecting
             <br />
             Students To Global Education
