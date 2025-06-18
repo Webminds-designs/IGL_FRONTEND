@@ -170,14 +170,14 @@ const Countries = () => {
       </section>
 
       {/* Content Section */}
-      <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-12 text-left">
+      <div className="max-w-full mx-auto p-3 sm:p-6 lg:p-14 py-8 md:py-12 text-left">
         <div className="flex items-center pt-6 md:pt-10">
           <div className="w-14 md:w-20 border-t border-gray-500"></div>
-          <h3 className="text-gray-500 text-sm md:text-xl uppercase tracking-wide ml-3 text-left">
+          <h3 className="text-gray-500 text-sm md:text-base uppercase tracking-wide ml-2 md:ml-3">
             Many To Choose From
           </h3>
         </div>
-        <p className="mt-4 md:mt-6 text-lg md:text-2xl text-left text-gray-700 font-light leading-relaxed">
+        <p className="text-lg md:text-2xl lg:text-[36px] xl:text-[36px] mt-4 md:mt-6 text-gray-800">
           Discover The Best Study Destinations Worldwide, Each Offering
           <span className="text-gray-400">
             {" "}
@@ -189,7 +189,7 @@ const Countries = () => {
       </div>
 
       {/* Animated Destination Cards */}
-      <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16">
+      <div className="max-w-full mx-auto p-3 sm:p-6 lg:p-14 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16">
         {destinations.map((destination, index) => (
           <motion.div
             key={index}
