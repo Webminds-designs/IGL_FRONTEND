@@ -36,7 +36,7 @@ const TestimonialSlider = () => {
   };
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row items-start justify-between">
+    <section className="max-w-full sm:p-6 lg:p-14 mx-auto px-6 py-12 flex flex-col md:flex-row items-start justify-between">
       {/* Left Section */}
       <div className="md:w-1/2 p-6 text-left">
         <h3 className="text-4xl font-base text-gray-800">

@@ -10,17 +10,17 @@ import { Link } from "react-router-dom";
 
 const StudyDestinations = () => {
   return (
-    <div className="max-w-7xl mx-auto p-3 sm:p-6 lg:p-8">
+    <div className="max-w-full mx-auto p-3 sm:p-6 lg:p-14">
       {/* Who Are We Section */}
       <div className="text-left pt-10 sm:pt-20">
         <div className="flex items-center">
           <div className="w-10 sm:w-20 border-t border-gray-500"></div>
-          <h3 className="text-gray-500 text-sm sm:text-xl uppercase tracking-wide ml-2 sm:ml-3">
+          <h3 className="text-gray-500 font-montserrat text-base sm:text-xl uppercase tracking-[0] leading-normal text-center">
             Who Are We
           </h3>
         </div>
 
-        <p className="text-2xl sm:text-3xl lg:text-4xl mt-5 text-gray-800 font-base text-left">
+        <p className="text-2xl sm:text-3xl lg:text-36px mt-5 text-gray-800 font-base text-left">
           We Connect Students With Top Universities Worldwide, Providing Expert
           Support In{" "}
           <span className="text-gray-400">

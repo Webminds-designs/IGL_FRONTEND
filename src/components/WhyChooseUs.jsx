@@ -44,7 +44,7 @@ const WhyChooseUs = () => {
     };
 
     return (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
+        <section className="max-w-full mx-auto p-3 sm:p-6 lg:p-14 py-12 sm:py-20">
             <div className="text-center">
                 <div className="flex items-center text-left pt-10">
                     <div className="w-20 border-t border-gray-500"></div>
