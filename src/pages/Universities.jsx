@@ -162,15 +162,15 @@ const Universities = () => {
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
       >
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-full mx-auto p-3 sm:p-6 lg:p-14">
           <div className="flex items-center pt-6 md:pt-10">
             <div className="w-14 md:w-20 border-t border-gray-500"></div>
-            <h3 className="text-gray-500 text-sm md:text-xl uppercase tracking-wide ml-3 text-left">
+            <h3 className="text-gray-500 text-sm md:text-base uppercase tracking-wide ml-2 md:ml-3">
               Many To Choose From
             </h3>
           </div>
 
-          <p className="mt-4 md:mt-6 text-lg md:text-2xl text-left text-black font-light leading-relaxed">
+          <p className="text-lg md:text-2xl lg:text-[36px] xl:text-[36px] mt-4 md:mt-6 text-gray-800">
             Explore
             <span className="text-gray-400"> Top-Ranked Institutions </span>
             Worldwide, Offering
@@ -186,8 +186,8 @@ const Universities = () => {
       </motion.section>
 
       {/* University Grid Section */}
-      <section className="max-w-7xl mx-auto mb-4 px-6 py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16">
+      <section className="max-w-full mx-auto p-3 sm:p-6 lg:p-14 py-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 pb-12">
           {universities.map((university, index) => (
             <motion.div
               key={index}
