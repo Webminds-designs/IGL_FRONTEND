@@ -57,6 +57,8 @@ const HeroSection = () => {
             initial={{ opacity: i === index ? 1 : 0 }}
             animate={{ opacity: i === index ? 1 : 0 }}
             transition={{ duration: 2.5, ease: "easeInOut" }}
+            loading="lazy"
+            aria-hidden="true"
           />
         ))}
       </div>
