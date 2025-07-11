@@ -5,7 +5,7 @@ import Navbar from "./Navbar";
 // Import images
 const images = [
   { src: () => import("../assets/hero.jpg"), location: "Singapore" },
-  { src: () => import("../assets/her2.jpg"), location: "USA" },
+  { src: () => import("../assets/hero2.jpg"), location: "USA" },
   { src: () => import("../assets/hero3.jpg"), location: "Canada" },
   { src: () => import("../assets/hero4.jpg"), location: "UK" },
   { src: () => import("../assets/hero5.jpg"), location: "Australia" },
